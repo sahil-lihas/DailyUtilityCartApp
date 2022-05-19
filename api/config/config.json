@@ -1,0 +1,11 @@
+{
+	"development": {
+		"mongoURI": "mongodb://localhost:27017/bucketeer"
+	},
+	"stage": {
+		"mongoURI": "mongodb://xyz:27017/bucketeer"
+	},
+	"production": {
+		"mongoURI": "mongodb://lmn:27017/bucketeer"
+	}
+}
