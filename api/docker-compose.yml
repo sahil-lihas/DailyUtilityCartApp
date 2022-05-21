@@ -1,0 +1,29 @@
+#define mongo db service
+version: "3.8"
+services:
+  mongodb:
+    image : mongo
+    container_name: mongodb
+    environment:
+    - PUID=1000
+    - PGID=1000
+    volumes:
+    - /Users/sahilgup/mongodb/database:/data/db
+    networks:
+    - my_network
+    ports:
+    - 27017:27017
+    restart: unless-stopped
+  dailyutilcart:
+    image : dailyutilcart
+    container_name: dailyutilcart
+    environment:
+    - PORT=8000
+    networks:
+    - my_network
+    ports:
+    - 8000:80
+# create network
+networks:
+  my_network:
+    name: my_network
